@@ -7,7 +7,7 @@ import Link from 'next/link'
 const Home: NextPage = () => {
   return (
     <>
-      <Background />
+      <Background alt="earth" url="/home/background-home-desktop.jpg" />
       <main className={styles.main}>
         <Navbar />
         <div className={styles.textWrapper}>
@@ -21,7 +21,7 @@ const Home: NextPage = () => {
           </p>
         </div>
         <div className={styles.exploreWrapper}>
-          <Link href="/destination">
+          <Link href="/destination/moon">
             <a className={styles.exploreHeader}>explore</a>
           </Link>
         </div>
