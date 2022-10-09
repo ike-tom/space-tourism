@@ -5,7 +5,7 @@ import styles from '../../styles/Crew.module.css'
 import Navbar from '../../components/ui/Navbar/Navbar'
 import Link from 'next/link'
 
-function DestinationPage(props) {
+function DestinationPage(props: LoadedCrewMemberProps) {
   const { loadedCrewMember } = props
 
   // if (!loadedCrewMember) {
@@ -64,7 +64,7 @@ export async function getStaticProps(context: {
   const data = await getData()
 
   const member = data.crew.find(
-    (member) =>
+    (member: CrewMemberProps) =>
       member.name.toLowerCase().split(' ').join('_') ===
       crewMemberName.toLowerCase().split(' ').join('_'),
   )
@@ -83,9 +83,9 @@ export async function getStaticProps(context: {
 export async function getStaticPaths() {
   const data = await getData()
 
-  const members = data.crew.map((member) => member.name)
+  const members = data.crew.map((member: CrewMemberProps) => member.name)
 
-  const pathsWithParams = members.map((member) => ({
+  const pathsWithParams = members.map((member: string) => ({
     params: { crewMemberName: member.toLowerCase().split(' ').join('_') },
   }))
 

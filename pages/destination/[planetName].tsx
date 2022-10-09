@@ -5,9 +5,10 @@ import styles from '../../styles/Destination.module.css'
 import Navbar from '../../components/ui/Navbar/Navbar'
 import PlanetNavbar from '../../components/ui/PlanetNavbar/PlanetNavbar'
 
-function DestinationPage(props) {
+function DestinationPage(props: LoadedPlanetProps) {
   const { loadedPlanet } = props
 
+  console.log(props)
   // if (!loadedPlanet) {
   //   return <p>Loading...</p>
   // }
@@ -68,7 +69,7 @@ export async function getStaticProps(context: {
   const data = await getData()
 
   const planet = data.destinations.find(
-    (destination) =>
+    (destination: PlanetProps) =>
       destination.name.toLowerCase() === planetName.toLowerCase(),
   )
 
@@ -86,9 +87,11 @@ export async function getStaticProps(context: {
 export async function getStaticPaths() {
   const data = await getData()
 
-  const planets = data.destinations.map((destination) => destination.name)
+  const planets = data.destinations.map(
+    (destination: PlanetProps) => destination.name,
+  )
 
-  const pathsWithParams = planets.map((planet) => ({
+  const pathsWithParams = planets.map((planet: string) => ({
     params: { planetName: planet.toLowerCase() },
   }))
 

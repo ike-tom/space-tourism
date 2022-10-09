@@ -5,12 +5,8 @@ import styles from '../../styles/Vehicle.module.css'
 import Navbar from '../../components/ui/Navbar/Navbar'
 import Link from 'next/link'
 
-function DestinationPage(props) {
+function DestinationPage(props: LoadedVehicleProps) {
   const { loadedVehicle } = props
-
-  // if (!loadedVehicle) {
-  //   return <p>Loading...</p>
-  // }
 
   return (
     <>
@@ -73,7 +69,7 @@ export async function getStaticProps(context: {
   const data = await getData()
 
   const vehicle = data.technology.find(
-    (vehicle) =>
+    (vehicle: VehicleProps) =>
       vehicle.name.toLowerCase().split(' ').join('_') ===
       vehicleName.toLowerCase().split(' ').join('_'),
   )
@@ -92,9 +88,9 @@ export async function getStaticProps(context: {
 export async function getStaticPaths() {
   const data = await getData()
 
-  const vehicles = data.technology.map((vehicle) => vehicle.name)
+  const vehicles = data.technology.map((vehicle: VehicleProps) => vehicle.name)
 
-  const pathsWithParams = vehicles.map((vehicle) => ({
+  const pathsWithParams = vehicles.map((vehicle: string) => ({
     params: { vehicleName: vehicle.toLowerCase().split(' ').join('_') },
   }))
 
