@@ -1,0 +1,27 @@
+.navbar {
+  width: 286px;
+  height: 34px;
+}
+
+.navbarList {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  justify-content: space-between;
+}
+.navbarItem {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 2.7px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.navbarItem:hover {
+  border-bottom: rgba(255, 255, 255, 0.5) 3px solid;
+  margin-bottom: -12px;
+  mix-blend-mode: normal;
+}
