@@ -7,7 +7,7 @@ function Navbar() {
     <div className={styles.wrapper}>
       <Image
         className={styles.logo}
-        src="/logo.svg"
+        src="/shared/logo.svg"
         alt="logo"
         width={48}
         height={48}
@@ -23,21 +23,21 @@ function Navbar() {
             </Link>
           </li>
           <li className={styles.navItem}>
-            <Link href="/destination">
+            <Link href="/destination/moon">
               <a>
                 <b>01</b> destination
               </a>
             </Link>
           </li>
           <li className={styles.navItem}>
-            <Link href="/crew">
+            <Link href="/crew/douglas_hurley">
               <a>
                 <b>02</b> crew
               </a>
             </Link>
           </li>
           <li className={styles.navItem}>
-            <Link href="/technology">
+            <Link href="/technology/launch_vehicle">
               <a>
                 <b>03</b> technology
               </a>
