@@ -8,10 +8,9 @@ import PlanetNavbar from '../../components/ui/PlanetNavbar/PlanetNavbar'
 function DestinationPage(props: LoadedPlanetProps) {
   const { loadedPlanet } = props
 
-  console.log(props)
-  // if (!loadedPlanet) {
-  //   return <p>Loading...</p>
-  // }
+  if (!loadedPlanet) {
+    return <p>Loading...</p>
+  }
 
   return (
     <>

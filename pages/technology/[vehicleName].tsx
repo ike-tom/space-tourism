@@ -8,6 +8,10 @@ import Link from 'next/link'
 function DestinationPage(props: LoadedVehicleProps) {
   const { loadedVehicle } = props
 
+  if (!loadedVehicle) {
+    return <p>Loading...</p>
+  }
+
   return (
     <>
       <Background

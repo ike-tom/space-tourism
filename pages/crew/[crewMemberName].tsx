@@ -8,9 +8,9 @@ import Link from 'next/link'
 function DestinationPage(props: LoadedCrewMemberProps) {
   const { loadedCrewMember } = props
 
-  // if (!loadedCrewMember) {
-  //   return <p>Loading...</p>
-  // }
+  if (!loadedCrewMember) {
+    return <p>Loading...</p>
+  }
 
   return (
     <>
