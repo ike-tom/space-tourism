@@ -40,17 +40,21 @@ function DestinationPage(props: LoadedPlanetProps) {
             {loadedPlanet.description}
           </p>
           <hr className={styles.line} />
-          <div className={styles.averageDistanceWrapper}>
-            <h3 className={styles.averageDistanceHeader}>avg. distance</h3>
-            <h2 className={styles.averageDistanceInfo}>
-              {loadedPlanet.distance}
-            </h2>
-          </div>
-          <div className={styles.averageTravelTimeWrapper}>
-            <h3 className={styles.averageTravelTimeHeader}>Est. travel time</h3>
-            <h2 className={styles.averageTravelTimeInfo}>
-              {loadedPlanet.travel}
-            </h2>
+          <div className={styles.distanceTravelTimeContainer}>
+            <div className={styles.averageDistanceWrapper}>
+              <h3 className={styles.averageDistanceHeader}>avg. distance</h3>
+              <h2 className={styles.averageDistanceInfo}>
+                {loadedPlanet.distance}
+              </h2>
+            </div>
+            <div className={styles.averageTravelTimeWrapper}>
+              <h3 className={styles.averageTravelTimeHeader}>
+                Est. travel time
+              </h3>
+              <h2 className={styles.averageTravelTimeInfo}>
+                {loadedPlanet.travel}
+              </h2>
+            </div>
           </div>
         </div>
       </main>
