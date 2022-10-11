@@ -2,6 +2,7 @@
   max-width: 1440px;
   margin: 0 auto;
   position: relative;
+  min-height: 100vh;
 }
 
 .destinationSubheaderWrapper {
@@ -12,91 +13,110 @@
   top: 212px;
 }
 
-.destinationSubheader {
+.destinationSubheader,
+.destinationSubheaderBold {
   font-family: 'Barlow Condensed';
   font-style: normal;
-  font-weight: 400;
+  color: #ffffff;
   font-size: 28px;
   line-height: 34px;
   letter-spacing: 4.725px;
+}
+
+.destinationSubheader {
+  font-weight: 400;
   text-transform: uppercase;
-  color: #ffffff;
   margin: 0;
 }
 
 .destinationSubheaderBold {
-  font-family: 'Barlow Condensed';
-  font-style: normal;
   font-weight: 700;
-  font-size: 28px;
-  line-height: 34px;
-  letter-spacing: 4.725px;
-  color: #ffffff;
   mix-blend-mode: normal;
   opacity: 0.25;
   margin-right: 24px;
 }
 
-.crewMemberImageWrapper {
+.crewMemberImageInfoContainer {
   position: absolute;
-  width: 568px;
-  height: 712px;
-  left: 734px;
+  width: 1138px;
+  height: 654px;
+  left: 165px;
   top: 198px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.crewMemberImageWrapper {
+  position: relative;
+  height: 654px;
+  width: 550px;
+  order: 2;
+}
+
+.crewMemberImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.memberInfoContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: space-between;
+  width: 488.5px;
+  height: 406px;
+  flex-direction: column;
+}
+
+.crewMemberRole,
+.crewMemberName {
+  font-family: 'Bellefair';
+  font-style: normal;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #ffffff;
 }
 
 .crewMemberRole {
-  position: absolute;
   height: 37px;
-  left: 165.5px;
-  top: 400px;
-  font-family: 'Bellefair';
-  font-style: normal;
-  font-weight: 400;
   font-size: 32px;
   line-height: 37px;
-  text-transform: uppercase;
-  color: #ffffff;
   mix-blend-mode: normal;
   opacity: 0.5;
+  margin: 0 0 15px 0;
 }
 
 .crewMemberName {
-  position: absolute;
   width: 614px;
   height: 64px;
-  left: 165.5px;
-  top: 452px;
-  font-family: 'Bellefair';
-  font-style: normal;
-  font-weight: 400;
   font-size: 56px;
   line-height: 64px;
-  text-transform: uppercase;
-
-  color: #ffffff;
+  margin: 0 0 27px 0;
 }
 
 .crewMemberBio {
-  position: absolute;
   width: 444px;
   height: 128px;
-  left: 165px;
-  top: 543px;
   font-family: 'Barlow';
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 32px;
   color: #d0d6f9;
+  margin: 0 0 120px 0;
 }
 
 .characterPickerWrapper {
-  position: absolute;
   width: 132px;
   height: 15px;
-  left: 167px;
-  top: 791px;
   display: flex;
   justify-content: space-between;
   align-content: center;
@@ -114,7 +134,64 @@
 }
 
 .characterPicker:hover {
-  background: #ffffff;
-  mix-blend-mode: normal;
   opacity: 0.5;
+}
+
+@media screen and (max-width: 1024px) {
+  .destinationSubheaderWrapper {
+    position: absolute;
+    height: 24px;
+    left: 38.5px;
+    top: 136px;
+  }
+  .destinationSubheader {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .crewMemberImageInfoContainer {
+    position: absolute;
+    width: 592px;
+    height: 804px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 220px;
+    flex-direction: column;
+  }
+
+  .memberInfoContainer {
+    align-items: center;
+    width: auto;
+    height: 232px;
+
+    text-align: center;
+  }
+  .crewMemberImageWrapper {
+    width: 450px;
+  }
+
+  .crewMemberRole {
+    margin: 0 0 8px 0;
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .crewMemberName {
+    margin: 0 0 16px 0;
+    font-size: 40px;
+    line-height: 46px;
+  }
+  .crewMemberBio {
+    font-size: 16px;
+    line-height: 28px;
+    margin: 0 0 40px 0;
+    width: auto;
+  }
+  .characterPickerWrapper {
+    width: 88px;
+    height: 10px;
+  }
+  .characterPicker {
+    width: 10px;
+    height: 10px;
+  }
 }

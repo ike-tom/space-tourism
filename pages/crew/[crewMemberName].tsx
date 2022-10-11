@@ -23,31 +23,35 @@ function DestinationPage(props: LoadedCrewMemberProps) {
             Meet your crew
           </h2>
         </div>
-        <div className={styles.crewMemberImageWrapper}>
-          <Image
-            src={loadedCrewMember.images.webp}
-            alt={loadedCrewMember.name}
-            layout="fill"
-          />
-        </div>
+        <div className={styles.crewMemberImageInfoContainer}>
+          <div className={styles.crewMemberImageWrapper}>
+            <Image
+              src={loadedCrewMember.images.webp}
+              alt={loadedCrewMember.name}
+              layout="fill"
+              className={styles.crewMemberImage}
+            />
+          </div>
+          <div className={styles.memberInfoContainer}>
+            <h2 className={styles.crewMemberRole}>{loadedCrewMember.role}</h2>
+            <h1 className={styles.crewMemberName}>{loadedCrewMember.name}</h1>
+            <p className={styles.crewMemberBio}>{loadedCrewMember.bio}</p>
 
-        <h2 className={styles.crewMemberRole}>{loadedCrewMember.role}</h2>
-        <h1 className={styles.crewMemberName}>{loadedCrewMember.name}</h1>
-        <p className={styles.crewMemberBio}>{loadedCrewMember.bio}</p>
-
-        <div className={styles.characterPickerWrapper}>
-          <Link href="/crew/douglas_hurley">
-            <div className={styles.characterPicker}></div>
-          </Link>
-          <Link href="/crew/mark_shuttleworth">
-            <div className={styles.characterPicker}></div>
-          </Link>
-          <Link href="/crew/victor_glover">
-            <div className={styles.characterPicker}></div>
-          </Link>
-          <Link href="/crew/anousheh_ansari">
-            <div className={styles.characterPicker}></div>
-          </Link>
+            <div className={styles.characterPickerWrapper}>
+              <Link href="/crew/douglas_hurley">
+                <div className={styles.characterPicker}></div>
+              </Link>
+              <Link href="/crew/mark_shuttleworth">
+                <div className={styles.characterPicker}></div>
+              </Link>
+              <Link href="/crew/victor_glover">
+                <div className={styles.characterPicker}></div>
+              </Link>
+              <Link href="/crew/anousheh_ansari">
+                <div className={styles.characterPicker}></div>
+              </Link>
+            </div>
+          </div>
         </div>
       </main>
     </>
