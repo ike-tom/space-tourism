@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: space-between;
   padding-top: 40px;
+  margin-left: auto;
 }
 
 .navbar {
@@ -30,6 +31,7 @@
   padding-left: 0;
   font-family: 'Barlow Condensed', sans-serif;
   color: #ffffff;
+  margin: 0;
 }
 .line {
   width: 473px;
@@ -46,4 +48,44 @@
   margin-bottom: -35px;
   mix-blend-mode: normal;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    position: absolute;
+    width: 729px;
+    height: 96px;
+    right: 0;
+    top: 0px;
+    padding: 0;
+  }
+  .line {
+    display: none;
+  }
+  .navbar {
+    width: 450px;
+    height: 96px;
+  }
+  .navItem {
+    font-family: 'Barlow Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    letter-spacing: 2.3625px;
+
+    color: #ffffff;
+  }
+  .navbarNav {
+    margin: 0;
+  }
+  .navItemBold {
+    display: none;
+  }
+  .navbarNav {
+    width: 356px;
+    height: 18px;
+  }
 }
