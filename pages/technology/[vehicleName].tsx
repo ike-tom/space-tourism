@@ -26,37 +26,39 @@ function DestinationPage(props: LoadedVehicleProps) {
             SPACE LAUNCH 101
           </h2>
         </div>
-        <div className={styles.crewMemberImageWrapper}>
-          <Image
-            src={loadedVehicle.images.portrait}
-            alt={loadedVehicle.name}
-            layout="fill"
-          />
-        </div>
+        <div className={styles.crewMemberImageInfoContainer}>
+          <div className={styles.crewMemberImageWrapper}>
+            <Image
+              src={loadedVehicle.images.portrait}
+              alt={loadedVehicle.name}
+              layout="fill"
+            />
+          </div>
 
-        <div className={styles.vehicleInfoWrapper}>
-          <p className={styles.vehicleSubheader}>the terminology…</p>
-          <h1 className={styles.vehicleName}>{loadedVehicle.name}</h1>
-          <p className={styles.vehicleDescription}>
-            {loadedVehicle.description}
-          </p>
-        </div>
-        <div className={styles.vehiclePickerWrapper}>
-          <Link href="/technology/launch_vehicle">
-            <div className={styles.vehiclePicker}>
-              <a className={styles.vehicleId}>1</a>
-            </div>
-          </Link>
-          <Link className={styles.vehicleId} href="/technology/spaceport">
-            <div className={styles.vehiclePicker}>
-              <a className={styles.vehicleId}>2</a>
-            </div>
-          </Link>
-          <Link className={styles.vehicleId} href="/technology/space_capsule">
-            <div className={styles.vehiclePicker}>
-              <a className={styles.vehicleId}>3</a>
-            </div>
-          </Link>
+          <div className={styles.vehicleInfoWrapper}>
+            <p className={styles.vehicleSubheader}>the terminology…</p>
+            <h1 className={styles.vehicleName}>{loadedVehicle.name}</h1>
+            <p className={styles.vehicleDescription}>
+              {loadedVehicle.description}
+            </p>
+          </div>
+          <div className={styles.vehiclePickerWrapper}>
+            <Link href="/technology/launch_vehicle">
+              <div className={styles.vehiclePicker}>
+                <a className={styles.vehicleId}>1</a>
+              </div>
+            </Link>
+            <Link className={styles.vehicleId} href="/technology/spaceport">
+              <div className={styles.vehiclePicker}>
+                <a className={styles.vehicleId}>2</a>
+              </div>
+            </Link>
+            <Link className={styles.vehicleId} href="/technology/space_capsule">
+              <div className={styles.vehiclePicker}>
+                <a className={styles.vehicleId}>3</a>
+              </div>
+            </Link>
+          </div>
         </div>
       </main>
     </>
