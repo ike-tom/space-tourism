@@ -1,19 +1,37 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
 import styles from './Navbar.module.css'
 
 function Navbar() {
+  const [isNavOpen, setIsNavOpen] = useState(false)
+
+  //after clicking on the hamburger menu, the nav will open
+  const handleNavOpen = () => {
+    setIsNavOpen(!isNavOpen)
+  }
+
   return (
     <div className={styles.wrapper}>
-      <Image
-        className={styles.logo}
-        src="/shared/logo.svg"
-        alt="logo"
-        width={48}
-        height={48}
-      />
+      <div className={styles.logoWrapper}>
+        <Image
+          className={styles.logo}
+          src="/shared/logo.svg"
+          alt="logo"
+          layout="fill"
+        />
+      </div>
       <hr className={styles.line} />
-      <nav className={styles.navbar}>
+      <button
+        onClick={handleNavOpen}
+        className={isNavOpen ? styles.hamburgerActive : styles.hamburger}
+      >
+        <span className={styles.hamburger__box}>
+          <span className={styles.hamburger__inner}></span>
+        </span>
+      </button>
+
+      <nav className={isNavOpen ? styles.navbarOpen : styles.navbar}>
         <ul className={styles.navbarNav}>
           <li className={styles.navItem}>
             <Link href="/">
