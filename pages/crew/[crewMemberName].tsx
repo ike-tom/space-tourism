@@ -1,9 +1,8 @@
 import Image from 'next/image'
-import Background from '../../components/ui/Background/Background'
 import { getData } from '../../utils/getData'
 import styles from '../../styles/Crew.module.css'
-import Navbar from '../../components/ui/Navbar/Navbar'
 import Link from 'next/link'
+import Layout from '../../components/ui/Layout/Layout'
 
 function DestinationPage(props: LoadedCrewMemberProps) {
   const { loadedCrewMember } = props
@@ -13,48 +12,43 @@ function DestinationPage(props: LoadedCrewMemberProps) {
   }
 
   return (
-    <>
-      <Background alt="space" url="/crew/background-crew-desktop.jpg" />
-      <main className={styles.main}>
-        <Navbar />
-        <div className={styles.destinationSubheaderWrapper}>
-          <h2 className={styles.destinationSubheader}>
-            <b className={styles.destinationSubheaderBold}>02</b>
-            Meet your crew
-          </h2>
+    <Layout
+      alt="space"
+      url="/crew/background-crew-desktop.jpg"
+      chapterNumber="02"
+      chapterTitle="Meet your crew"
+    >
+      <div className={styles.crewMemberImageInfoContainer}>
+        <div className={styles.crewMemberImageWrapper}>
+          <Image
+            src={loadedCrewMember.images.webp}
+            alt={loadedCrewMember.name}
+            layout="fill"
+            className={styles.crewMemberImage}
+          />
         </div>
-        <div className={styles.crewMemberImageInfoContainer}>
-          <div className={styles.crewMemberImageWrapper}>
-            <Image
-              src={loadedCrewMember.images.webp}
-              alt={loadedCrewMember.name}
-              layout="fill"
-              className={styles.crewMemberImage}
-            />
-          </div>
-          <div className={styles.memberInfoContainer}>
-            <h2 className={styles.crewMemberRole}>{loadedCrewMember.role}</h2>
-            <h1 className={styles.crewMemberName}>{loadedCrewMember.name}</h1>
-            <p className={styles.crewMemberBio}>{loadedCrewMember.bio}</p>
+        <div className={styles.memberInfoContainer}>
+          <h2 className={styles.crewMemberRole}>{loadedCrewMember.role}</h2>
+          <h1 className={styles.crewMemberName}>{loadedCrewMember.name}</h1>
+          <p className={styles.crewMemberBio}>{loadedCrewMember.bio}</p>
 
-            <div className={styles.characterPickerWrapper}>
-              <Link href="/crew/douglas_hurley">
-                <div className={styles.characterPicker}></div>
-              </Link>
-              <Link href="/crew/mark_shuttleworth">
-                <div className={styles.characterPicker}></div>
-              </Link>
-              <Link href="/crew/victor_glover">
-                <div className={styles.characterPicker}></div>
-              </Link>
-              <Link href="/crew/anousheh_ansari">
-                <div className={styles.characterPicker}></div>
-              </Link>
-            </div>
+          <div className={styles.characterPickerWrapper}>
+            <Link href="/crew/douglas_hurley">
+              <div className={styles.characterPicker}></div>
+            </Link>
+            <Link href="/crew/mark_shuttleworth">
+              <div className={styles.characterPicker}></div>
+            </Link>
+            <Link href="/crew/victor_glover">
+              <div className={styles.characterPicker}></div>
+            </Link>
+            <Link href="/crew/anousheh_ansari">
+              <div className={styles.characterPicker}></div>
+            </Link>
           </div>
         </div>
-      </main>
-    </>
+      </div>
+    </Layout>
   )
 }
 
