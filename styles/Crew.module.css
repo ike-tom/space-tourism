@@ -3,7 +3,7 @@
   margin: 0 auto;
   position: relative;
   min-height: 100vh;
-  
+
   overflow-x: hidden;
 }
 
@@ -195,5 +195,62 @@
   .characterPicker {
     width: 10px;
     height: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .destinationSubheaderWrapper {
+    position: absolute;
+    width: auto;
+    height: 19px;
+    left: 105px;
+    top: 88px;
+  }
+  .destinationSubheader,
+  .destinationSubheaderBold {
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 2.7px;
+  }
+  .destinationSubheaderBold {
+    margin-right: 16px;
+  }
+  .crewMemberImageInfoContainer {
+    top: 139px;
+    height: auto;
+    width: 327px;
+  }
+  .crewMemberImageWrapper {
+    order: 1;
+    width: 327px;
+    height: 223px;
+    border-bottom: 1px solid #383b4b;
+  }
+  .memberInfoContainer {
+    order: 2;
+    text-align: center;
+    width: 100%;
+  }
+  .crewMemberRole {
+    font-size: 16px;
+    line-height: 18px;
+    margin: 0 0 8px 0;
+  }
+  .crewMemberName {
+    font-size: 24px;
+    line-height: 28px;
+    margin: 0 0 16px 0;
+  }
+  .crewMemberBio {
+    font-size: 15px;
+    line-height: 25px;
+    margin: 0;
+  }
+  .memberInfoContainer {
+    margin-top: 32px;
+  }
+  .characterPickerWrapper {
+    order: -1;
+    margin: 0 0 32px 0;
   }
 }
