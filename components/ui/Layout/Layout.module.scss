@@ -1,0 +1,65 @@
+.main {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  .destinationSubheaderWrapper {
+    position: absolute;
+    height: 19px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 88px;
+    color: #ffffff;
+    line-height: 19px;
+    letter-spacing: 2.7px;
+    font-family: 'Barlow Condensed';
+    text-align: center;
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+      transform: none;
+      text-align: left;
+      left: 38.5px;
+      top: 136px;
+      line-height: 24px;
+      letter-spacing: 3.375px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      transform: none;
+      text-align: left;
+      left: 166.5px;
+      top: 212px;
+      height: 34px;
+      letter-spacing: 4.725px;
+    }
+
+    .destinationSubheader {
+      font-weight: 400;
+      font-size: 16px;
+      text-transform: uppercase;
+      margin: 0;
+      @media screen and (min-width: 768px) {
+        font-size: 20px;
+      }
+      @media screen and (min-width: 1024px) {
+        font-size: 28px;
+      }
+
+      .destinationSubheaderBold {
+        font-weight: 700;
+        margin-right: 18px;
+        mix-blend-mode: normal;
+        opacity: 0.25;
+        @media screen and (min-width: 768px) {
+          font-size: 20px;
+        }
+        @media screen and (min-width: 1024px) {
+          font-size: 28px;
+        }
+      }
+    }
+  }
+}
