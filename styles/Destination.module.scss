@@ -1,0 +1,147 @@
+@mixin uppercase-normal-font-weight {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.planetWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 327px;
+  top: 139px;
+  left: 50%;
+  transform: translateX(-50%);
+  @media screen and (min-width: 768px) {
+    width: 573px;
+    top: 220px;
+  }
+  @media screen and (min-width: 1024px) {
+    min-width: 1024px;
+    top: 310px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .planetImageWrapper {
+    position: relative;
+    width: 170px;
+    height: 170px;
+    margin: 0 0 26px 0;
+    @media screen and (min-width: 768px) {
+      width: 300px;
+      height: 300px;
+      margin: 0 0 53px 0;
+    }
+    @media screen and (min-width: 1024px) {
+      width: 445px;
+      height: 445px;
+      margin: 0;
+      align-self: flex-end;
+    }
+  }
+  .planetInfoWrapper {
+    text-align: center;
+    @media screen and (min-width: 1024px) {
+      text-align: left;
+      width: 445px;
+      height: 478px;
+    }
+    .planetInfoName {
+      @include uppercase-normal-font-weight;
+
+      font-family: 'Bellefair';
+      font-size: 56px;
+      line-height: 64px;
+      color: #ffffff;
+      margin: 20px 0 1px 0;
+      @media screen and (min-width: 768px) {
+        font-size: 80px;
+        line-height: 92px;
+        margin: 32px 0 8px 0;
+      }
+      @media screen and (min-width: 1024px) {
+        font-size: 100px;
+        line-height: 115px;
+        margin: 37px 0 14px 0;
+      }
+    }
+    .planetInfoDescription {
+      font-family: 'Barlow';
+      font-size: 15px;
+      line-height: 25px;
+      color: #d0d6f9;
+      margin: 0 0 32px 0;
+      @media screen and (min-width: 768px) {
+        font-size: 16px;
+        line-height: 28px;
+        margin: 0 0 49px 0;
+      }
+      @media screen and (min-width: 1024px) {
+        font-size: 18px;
+        line-height: 32px;
+        margin: 0 0 54px 0;
+      }
+    }
+    .line {
+      height: 1px;
+      margin: 0 0 32px 0;
+      border-color: #383b4b;
+      @media screen and (min-width: 768px) {
+        margin: 0 0 28px 0;
+      }
+    }
+    .distanceTravelTimeContainer {
+      height: 154px;
+      display: flex;
+      margin: 0 0 58px 0;
+      justify-content: space-between;
+      flex-direction: column;
+      @media screen and (min-width: 768px) {
+        flex-direction: row;
+        height: 61px;
+        justify-content: space-evenly;
+      }
+      @media screen and (min-width: 1024px) {
+        margin: 0;
+        justify-content: unset;
+      }
+
+      .averageDistanceWrapper,
+      .averageTravelTimeWrapper {
+        @media screen and (min-width: 768px) {
+          width: 223px;
+        }
+        @media screen and (min-width: 1024px) {
+          width: 156px;
+        }
+        .averageDistanceHeader,
+        .averageTravelTimeHeader {
+          @include uppercase-normal-font-weight;
+
+          font-family: 'Barlow Condensed';
+          font-size: 14px;
+          line-height: 17px;
+          letter-spacing: 2.3625px;
+          color: #d0d6f9;
+          margin: 0 0 12px 0;
+        }
+      }
+      .averageDistanceInfo,
+      .averageTravelTimeInfo {
+        @include uppercase-normal-font-weight;
+
+        font-family: 'Bellefair';
+        font-size: 28px;
+        line-height: 32px;
+        margin: 0;
+        color: #ffffff;
+      }
+      .averageDistanceWrapper {
+        @media screen and (min-width: 1024px) {
+          margin-right: 66px;
+        }
+      }
+    }
+  }
+}
