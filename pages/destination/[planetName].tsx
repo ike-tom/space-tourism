@@ -1,9 +1,8 @@
 import Image from 'next/image'
-import Background from '../../components/ui/Background/Background'
 import { getData } from '../../utils/getData'
 import styles from '../../styles/Destination.module.css'
-import Navbar from '../../components/ui/Navbar/Navbar'
 import PlanetNavbar from '../../components/ui/PlanetNavbar/PlanetNavbar'
+import Layout from '../../components/ui/Layout/Layout'
 
 function DestinationPage(props: LoadedPlanetProps) {
   const { loadedPlanet } = props
@@ -14,24 +13,19 @@ function DestinationPage(props: LoadedPlanetProps) {
 
   return (
     <>
-      <Background
+      <Layout
         alt="space"
         url="/destination/background-destination-desktop.jpg"
-      />
-      <main className={styles.main}>
-        <Navbar />
-        <div className={styles.destinationSubheaderWrapper}>
-          <h2 className={styles.destinationSubheader}>
-            <b className={styles.destinationSubheaderBold}>01</b>
-            Pick your destination
-          </h2>
-        </div>
+        chapterNumber="01"
+        chapterTitle="Pick your destination"
+      >
         <div className={styles.planetWrapper}>
           <div className={styles.planetImageWrapper}>
             <Image
               src={loadedPlanet.images.webp}
               alt={loadedPlanet.name}
               layout="fill"
+              priority
             />
           </div>
           <div className={styles.planetInfoWrapper}>
@@ -59,7 +53,7 @@ function DestinationPage(props: LoadedPlanetProps) {
             </div>
           </div>
         </div>
-      </main>
+      </Layout>
     </>
   )
 }

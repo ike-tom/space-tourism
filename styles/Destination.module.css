@@ -1,38 +1,3 @@
-.main {
-  max-width: 1440px;
-  margin: 0 auto;
-  position: relative;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-.destinationSubheaderWrapper {
-  position: absolute;
-  height: 19px;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 88px;
-  color: #ffffff;
-  line-height: 19px;
-  letter-spacing: 2.7px;
-  font-family: 'Barlow Condensed';
-  text-align: center;
-  width: 100%;
-}
-
-.destinationSubheader {
-  font-weight: 400;
-  font-size: 16px;
-  text-transform: uppercase;
-  margin: 0;
-}
-.destinationSubheaderBold {
-  font-weight: 700;
-  margin-right: 18px;
-  mix-blend-mode: normal;
-  opacity: 0.25;
-}
-
 .planetWrapper {
   display: flex;
   flex-direction: column;
@@ -109,18 +74,6 @@
   color: #ffffff;
 }
 @media screen and (min-width: 768px) {
-  .destinationSubheaderWrapper {
-    transform: none;
-    text-align: left;
-    left: 38.5px;
-    top: 136px;
-    line-height: 24px;
-    letter-spacing: 3.375px;
-  }
-  .destinationSubheader,
-  .dedestinationSubheaderBold {
-    font-size: 20px;
-  }
   .planetWrapper {
     width: 573px;
     top: 220px;
@@ -156,18 +109,6 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .destinationSubheaderWrapper {
-    transform: none;
-    text-align: left;
-    left: 166.5px;
-    top: 212px;
-    line-height: 34px;
-    letter-spacing: 4.725px;
-  }
-  .destinationSubheader,
-  .dedestinationSubheaderBold {
-    font-size: 28px;
-  }
   .planetWrapper {
     min-width: 1024px;
     top: 310px;
