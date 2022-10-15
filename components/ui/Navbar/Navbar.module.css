@@ -51,15 +51,15 @@
 
 .navItem:hover {
   border-bottom: rgba(255, 255, 255, 0.5) 3px solid;
-  margin-bottom: -35px;
+  /* margin-bottom: -35px; */
   mix-blend-mode: normal;
   cursor: pointer;
 }
 
 .hamburger {
-  display: none;
+  width: 50px;
   padding: 10px;
-  display: inline-block;
+  display: none;
   cursor: pointer;
   background-color: transparent;
   border: 0;
@@ -102,8 +102,9 @@
   transition: transform 0.3s 0.1s ease-in-out;
 }
 
-.hamburger--active {
-  transform: translateX(250px);
+.hamburgerActive {
+  /* transform: translateX(250px); */
+  width: 50px;
 }
 
 .hamburger__box {
