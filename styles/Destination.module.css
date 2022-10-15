@@ -2,222 +2,210 @@
   max-width: 1440px;
   margin: 0 auto;
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
 .destinationSubheaderWrapper {
   position: absolute;
-  width: 382px;
-  height: 34px;
-  left: 166.5px;
-  top: 212px;
+  height: 19px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 88px;
+  color: #ffffff;
+  line-height: 19px;
+  letter-spacing: 2.7px;
+  font-family: 'Barlow Condensed';
+  text-align: center;
+  width: 100%;
 }
 
 .destinationSubheader {
-  font-family: 'Barlow Condensed';
-  font-style: normal;
   font-weight: 400;
-  font-size: 28px;
-  line-height: 34px;
-  letter-spacing: 4.725px;
+  font-size: 16px;
   text-transform: uppercase;
-  color: #ffffff;
   margin: 0;
 }
-
 .destinationSubheaderBold {
-  font-family: 'Barlow Condensed';
-  font-style: normal;
   font-weight: 700;
-  font-size: 28px;
-  line-height: 34px;
-  letter-spacing: 4.725px;
-  color: #ffffff;
+  margin-right: 18px;
   mix-blend-mode: normal;
   opacity: 0.25;
-  margin-right: 24px;
+}
+
+.planetWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 327px;
+  top: 139px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.planetImageWrapper {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  margin: 0 0 26px 0;
 }
 
 .planetInfoWrapper {
-  position: absolute;
-  width: 445px;
-  height: 472px;
-  left: 832px;
-  top: 310px;
+  text-align: center;
 }
 
 .planetInfoName {
   font-family: 'Bellefair';
-  font-style: normal;
   font-weight: 400;
-  font-size: 100px;
-  line-height: 115px;
+  font-size: 56px;
+  line-height: 64px;
   text-transform: uppercase;
-  margin: 0;
   color: #ffffff;
-  position: absolute;
-  height: 115px;
-  left: 0.11%;
-  right: 25.06%;
-  top: calc(50% - 115px / 2 - 107.5px);
+  margin: 20px 0 1px 0;
 }
 
 .planetInfoDescription {
-  position: absolute;
-  height: 128px;
-  left: 0%;
-  right: 0.22%;
-  top: calc(50% - 128px / 2 + 28px);
   font-family: 'Barlow';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 32px;
-  margin: 0;
-
+  font-size: 15px;
+  line-height: 25px;
   color: #d0d6f9;
+  margin: 0 0 32px 0;
 }
-
 .line {
-  position: absolute;
-  left: 0.22%;
-  right: 0%;
-  top: 80.93%;
-  bottom: 18.86%;
-  color: #383b4b;
+  height: 1px;
+  margin: 0 0 32px 0;
+  border-color: #383b4b;
 }
 
-.averageDistanceWrapper {
-  position: absolute;
-  left: 0.11%;
-  right: 67.75%;
-  top: 87.08%;
-  bottom: 0%;
-}
-
-.averageDistanceHeader {
-  position: absolute;
-  height: 17px;
-  left: 0%;
-  top: calc(50% - 17px / 2 - 22px);
+.distanceTravelTimeContainer {
+  height: 154px;
+  display: flex;
+  margin: 0 0 58px 0;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .averageDistanceHeader,
 .averageTravelTimeHeader {
   font-family: 'Barlow Condensed';
-  font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 2.3625px;
   text-transform: uppercase;
   color: #d0d6f9;
-  margin: 0;
+  margin: 0 0 12px 0;
 }
 
-.averageDistanceInfo {
-  position: absolute;
-  height: 32px;
-  left: 0%;
-  right: 0%;
-  top: calc(50% - 32px / 2 + 14.5px);
-}
 .averageDistanceInfo,
 .averageTravelTimeInfo {
   font-family: 'Bellefair';
-  font-style: normal;
   font-weight: 400;
   font-size: 28px;
   line-height: 32px;
   text-transform: uppercase;
-  color: #ffffff;
   margin: 0;
+  color: #ffffff;
 }
-
-.averageTravelTimeInfo {
-  position: absolute;
-  height: 32px;
-  left: 0%;
-  top: calc(50% - 32px / 2 + 14.5px);
-}
-
-.averageTravelTimeWrapper {
-  position: absolute;
-  left: 50%;
-  top: 87.08%;
-  bottom: 0%;
-  width: 144px;
-}
-
-.planetImageWrapper {
-  position: absolute;
-  width: 445px;
-  height: 445px;
-  left: 230px;
-  top: 343px;
-}
-
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px) {
   .destinationSubheaderWrapper {
-    position: absolute;
-    height: 24px;
+    transform: none;
+    text-align: left;
     left: 38.5px;
     top: 136px;
-  }
-  .planetImageWrapper {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 220px;
-  }
-  .planetInfoWrapper {
-    position: absolute;
-    width: 573px;
-    height: 389px;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 573px;
-    text-align: center;
+    line-height: 24px;
+    letter-spacing: 3.375px;
   }
   .destinationSubheader,
-  .destinationSubheaderBold {
+  .dedestinationSubheaderBold {
     font-size: 20px;
-    line-height: 24px;
   }
+  .planetWrapper {
+    width: 573px;
+    top: 220px;
+  }
+  .planetImageWrapper {
+    width: 300px;
+    height: 300px;
+    margin: 0 0 53px 0;
+  }
+
   .planetInfoName {
-    position: absolute;
-    width: 266px;
-    height: 92px;
-    left: 50%;
-    top: 66px;
-    transform: translateX(-50%);
     font-size: 80px;
     line-height: 92px;
+    margin: 32px 0 8px 0;
   }
   .planetInfoDescription {
-    left: 0;
-    right: 0;
+    font-size: 16px;
+    line-height: 28px;
+    margin: 0 0 49px 0;
+  }
+  .line {
+    margin: 0 0 28px 0;
   }
   .distanceTravelTimeContainer {
-    position: absolute;
-    width: 573px;
-    height: 90px;
-    display: flex;
-    top: 355px;
-    justify-content: space-around;
+    flex-direction: row;
+    height: 61px;
+    justify-content: space-evenly;
   }
-  .averageTravelTimeWrapper,
-  .averageDistanceInfo,
-  .averageTravelTimeInfo,
   .averageDistanceWrapper,
-  .averageDistanceHeader {
-    position: static;
+  .averageTravelTimeWrapper {
+    width: 223px;
   }
-  .averageDistanceHeader,
-  .averageTravelTimeHeader {
-    margin-bottom: 12px;
+}
+
+@media screen and (min-width: 1024px) {
+  .destinationSubheaderWrapper {
+    transform: none;
+    text-align: left;
+    left: 166.5px;
+    top: 212px;
+    line-height: 34px;
+    letter-spacing: 4.725px;
+  }
+  .destinationSubheader,
+  .dedestinationSubheaderBold {
+    font-size: 28px;
+  }
+  .planetWrapper {
+    min-width: 1024px;
+    top: 310px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .planetImageWrapper {
+    width: 445px;
+    height: 445px;
+    margin: 0;
+    align-self: flex-end;
+  }
+
+  .planetInfoWrapper {
+    text-align: left;
+    width: 445px;
+    height: 478px;
+  }
+  .planetInfoName {
+    font-size: 100px;
+    line-height: 115px;
+    margin: 37px 0 14px 0;
+  }
+  .planetInfoDescription {
+    font-size: 18px;
+    line-height: 32px;
+    margin: 0 0 54px 0;
+  }
+  .distanceTravelTimeContainer {
+    margin: 0;
+    justify-content: unset;
+  }
+  .averageDistanceWrapper,
+  .averageTravelTimeWrapper {
+    width: 156px;
+  }
+  .averageDistanceWrapper {
+    margin-right: 66px;
   }
 }

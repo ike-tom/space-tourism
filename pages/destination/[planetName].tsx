@@ -26,34 +26,36 @@ function DestinationPage(props: LoadedPlanetProps) {
             Pick your destination
           </h2>
         </div>
-        <div className={styles.planetImageWrapper}>
-          <Image
-            src={loadedPlanet.images.webp}
-            alt={loadedPlanet.name}
-            layout="fill"
-          />
-        </div>
-        <div className={styles.planetInfoWrapper}>
-          <PlanetNavbar />
-          <h1 className={styles.planetInfoName}>{loadedPlanet.name}</h1>
-          <p className={styles.planetInfoDescription}>
-            {loadedPlanet.description}
-          </p>
-          <hr className={styles.line} />
-          <div className={styles.distanceTravelTimeContainer}>
-            <div className={styles.averageDistanceWrapper}>
-              <h3 className={styles.averageDistanceHeader}>avg. distance</h3>
-              <h2 className={styles.averageDistanceInfo}>
-                {loadedPlanet.distance}
-              </h2>
-            </div>
-            <div className={styles.averageTravelTimeWrapper}>
-              <h3 className={styles.averageTravelTimeHeader}>
-                Est. travel time
-              </h3>
-              <h2 className={styles.averageTravelTimeInfo}>
-                {loadedPlanet.travel}
-              </h2>
+        <div className={styles.planetWrapper}>
+          <div className={styles.planetImageWrapper}>
+            <Image
+              src={loadedPlanet.images.webp}
+              alt={loadedPlanet.name}
+              layout="fill"
+            />
+          </div>
+          <div className={styles.planetInfoWrapper}>
+            <PlanetNavbar />
+            <h1 className={styles.planetInfoName}>{loadedPlanet.name}</h1>
+            <p className={styles.planetInfoDescription}>
+              {loadedPlanet.description}
+            </p>
+            <hr className={styles.line} />
+            <div className={styles.distanceTravelTimeContainer}>
+              <div className={styles.averageDistanceWrapper}>
+                <h3 className={styles.averageDistanceHeader}>avg. distance</h3>
+                <h2 className={styles.averageDistanceInfo}>
+                  {loadedPlanet.distance}
+                </h2>
+              </div>
+              <div className={styles.averageTravelTimeWrapper}>
+                <h3 className={styles.averageTravelTimeHeader}>
+                  Est. travel time
+                </h3>
+                <h2 className={styles.averageTravelTimeInfo}>
+                  {loadedPlanet.travel}
+                </h2>
+              </div>
             </div>
           </div>
         </div>
