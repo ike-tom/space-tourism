@@ -1,0 +1,151 @@
+.crewMemberImageInfoContainer {
+  position: absolute;
+  display: flex;
+  width: 327px;
+  height: 467px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 139px;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
+  @media screen and (min-width: 768px) {
+    width: 592px;
+    height: auto;
+    top: 220px;
+    bottom: 0;
+  }
+  @media screen and (min-width: 1024px) {
+    min-width: 1024px;
+    height: 712px;
+    flex-direction: row;
+    top: 198px;
+    align-items: center;
+  }
+  .crewMemberImageWrapper {
+    position: relative;
+    border-bottom: 2px solid #383b4b;
+    height: 222px;
+    @media screen and (min-width: 768px) {
+      height: 532px;
+      border-bottom: none;
+      order: 2;
+    }
+    @media screen and (min-width: 1024px) {
+      height: 712px;
+      width: 615px;
+      align-self: flex-end;
+    }
+  }
+  .memberInfoContainer {
+    display: flex;
+    height: 212px;
+    flex-direction: column;
+    align-items: center;
+    @media screen and (min-width: 1024px) {
+      align-items: flex-start;
+      width: 614px;
+      text-align: left;
+    }
+
+    .crewMemberRole {
+      font-family: 'Bellefair';
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 18px;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin: 0 0 8px 0;
+      opacity: 0.5;
+      @media screen and (min-width: 768px) {
+        font-size: 24px;
+        line-height: 28px;
+      }
+      @media screen and (min-width: 1024px) {
+        font-size: 32px;
+        line-height: 37px;
+        margin-bottom: 15px;
+      }
+    }
+    .crewMemberName {
+      font-family: 'Bellefair';
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 28px;
+      text-transform: uppercase;
+      margin: 0 0 16px 0;
+      color: #ffffff;
+      @media screen and (min-width: 768px) {
+        font-size: 40px;
+        line-height: 46px;
+      }
+      @media screen and (min-width: 1024px) {
+        font-size: 56px;
+        line-height: 64px;
+        margin-bottom: 27px;
+        width: 614px;
+      }
+    }
+    .crewMemberBio {
+      font-family: 'Barlow';
+      font-size: 15px;
+      line-height: 25px;
+      margin: 0;
+      color: #d0d6f9;
+      @media screen and (min-width: 768px) {
+        font-size: 16px;
+        line-height: 28px;
+        margin-bottom: 40px;
+      }
+      @media screen and (min-width: 1024px) {
+        font-size: 18px;
+        line-height: 32px;
+        width: 444px;
+      }
+    }
+    .characterPickerWrapper {
+      order: -1;
+      width: 88px;
+      height: 10px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      @media screen and (min-width: 768px) {
+        order: 2;
+        margin-bottom: 0;
+      }
+      @media screen and (min-width: 1024px) {
+        position: absolute;
+        width: 132px;
+        height: 15px;
+        bottom: 94px;
+      }
+      .characterPicker {
+        opacity: 0.17;
+      }
+
+      .characterPicker,
+      .characterPickerActive {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #ffffff;
+        mix-blend-mode: normal;
+
+        @media screen and (min-width: 1024px) {
+          width: 15px;
+          height: 15px;
+          transition: 0.3s ease-in-out;
+          cursor: pointer;
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+
+        .characterPickerActive {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

@@ -1,11 +1,21 @@
 import Image from 'next/image'
 import { getData } from '../../utils/getData'
-import styles from '../../styles/Crew.module.css'
+import styles from '../../styles/Crew.module.scss'
 import Link from 'next/link'
 import Layout from '../../components/ui/Layout/Layout'
+import { useRouter } from 'next/router'
 
 function DestinationPage(props: LoadedCrewMemberProps) {
   const { loadedCrewMember } = props
+
+  const router = useRouter()
+  const { crewMemberName } = router.query
+  const astronauts = [
+    'douglas_hurley',
+    'mark_shuttleworth',
+    'victor_glover',
+    'anousheh_ansari',
+  ]
 
   if (!loadedCrewMember) {
     return <p>Loading...</p>
@@ -24,6 +34,8 @@ function DestinationPage(props: LoadedCrewMemberProps) {
             src={loadedCrewMember.images.webp}
             alt={loadedCrewMember.name}
             layout="fill"
+            objectFit="contain"
+            priority
             className={styles.crewMemberImage}
           />
         </div>
@@ -31,20 +43,20 @@ function DestinationPage(props: LoadedCrewMemberProps) {
           <h2 className={styles.crewMemberRole}>{loadedCrewMember.role}</h2>
           <h1 className={styles.crewMemberName}>{loadedCrewMember.name}</h1>
           <p className={styles.crewMemberBio}>{loadedCrewMember.bio}</p>
-
           <div className={styles.characterPickerWrapper}>
-            <Link href="/crew/douglas_hurley">
-              <div className={styles.characterPicker}></div>
-            </Link>
-            <Link href="/crew/mark_shuttleworth">
-              <div className={styles.characterPicker}></div>
-            </Link>
-            <Link href="/crew/victor_glover">
-              <div className={styles.characterPicker}></div>
-            </Link>
-            <Link href="/crew/anousheh_ansari">
-              <div className={styles.characterPicker}></div>
-            </Link>
+            {astronauts.map((astronaut) => {
+              return (
+                <Link key={astronaut} href={`/crew/${astronaut}`}>
+                  <div
+                    className={
+                      crewMemberName === `${astronaut}`
+                        ? styles.characterPickerActive
+                        : styles.characterPicker
+                    }
+                  ></div>
+                </Link>
+              )
+            })}
           </div>
         </div>
       </div>
