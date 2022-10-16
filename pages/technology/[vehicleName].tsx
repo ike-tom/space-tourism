@@ -1,67 +1,59 @@
 import Image from 'next/image'
-import Background from '../../components/ui/Background/Background'
 import { getData } from '../../utils/getData'
-import styles from '../../styles/Vehicle.module.css'
-import Navbar from '../../components/ui/Navbar/Navbar'
+import styles from '../../styles/Vehicle.module.scss'
 import Link from 'next/link'
+import Layout from '../../components/ui/Layout/Layout'
+import { useRouter } from 'next/router'
 
 function DestinationPage(props: LoadedVehicleProps) {
   const { loadedVehicle } = props
+
+  const router = useRouter()
+  const { vehicleName } = router.query
+  const vehicles = ['launch_vehicle', 'spaceport', 'space_capsule']
 
   if (!loadedVehicle) {
     return <p>Loading...</p>
   }
 
   return (
-    <>
-      <Background
-        alt="space"
-        url="/technology/background-technology-desktop.jpg"
-      />
-      <main className={styles.main}>
-        <Navbar />
-        <div className={styles.destinationSubheaderWrapper}>
-          <h2 className={styles.destinationSubheader}>
-            <b className={styles.destinationSubheaderBold}>03</b>
-            SPACE LAUNCH 101
-          </h2>
+    <Layout
+      alt="space"
+      url="/technology/background-technology-desktop.jpg"
+      chapterNumber="03"
+      chapterTitle="space launch 101"
+    >
+      <div className={styles.crewMemberImageInfoContainer}>
+        <div className={styles.crewMemberImageWrapper}>
+          <Image
+            src={loadedVehicle.images.portrait}
+            alt={loadedVehicle.name}
+            layout="fill"
+            priority
+            objectFit="cover"
+            objectPosition="bottom"
+          />
         </div>
-        <div className={styles.crewMemberImageInfoContainer}>
-          <div className={styles.crewMemberImageWrapper}>
-            <Image
-              src={loadedVehicle.images.portrait}
-              alt={loadedVehicle.name}
-              layout="fill"
-            />
-          </div>
-
-          <div className={styles.vehicleInfoWrapper}>
-            <p className={styles.vehicleSubheader}>the terminology…</p>
-            <h1 className={styles.vehicleName}>{loadedVehicle.name}</h1>
-            <p className={styles.vehicleDescription}>
-              {loadedVehicle.description}
-            </p>
-          </div>
-          <div className={styles.vehiclePickerWrapper}>
-            <Link href="/technology/launch_vehicle">
-              <div className={styles.vehiclePicker}>
-                <a className={styles.vehicleId}>1</a>
-              </div>
-            </Link>
-            <Link className={styles.vehicleId} href="/technology/spaceport">
-              <div className={styles.vehiclePicker}>
-                <a className={styles.vehicleId}>2</a>
-              </div>
-            </Link>
-            <Link className={styles.vehicleId} href="/technology/space_capsule">
-              <div className={styles.vehiclePicker}>
-                <a className={styles.vehicleId}>3</a>
-              </div>
-            </Link>
-          </div>
+        <div className={styles.vehicleInfoWrapper}>
+          <p className={styles.vehicleSubheader}>the terminology…</p>
+          <h1 className={styles.vehicleName}>{loadedVehicle.name}</h1>
+          <p className={styles.vehicleDescription}>
+            {loadedVehicle.description}
+          </p>
         </div>
-      </main>
-    </>
+        <div className={styles.vehiclePickerWrapper}>
+          {vehicles.map((vehicle, index) => {
+            return (
+              <Link key={vehicle} href={`/technology/${vehicle}`}>
+                <div className={styles.vehiclePicker}>
+                  <a className={styles.vehicleId}>{index + 1}</a>
+                </div>
+              </Link>
+            )
+          })}
+        </div>
+      </div>
+    </Layout>
   )
 }
 

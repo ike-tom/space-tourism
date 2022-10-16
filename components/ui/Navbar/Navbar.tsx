@@ -6,7 +6,6 @@ import styles from './Navbar.module.css'
 function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false)
 
-  //after clicking on the hamburger menu, the nav will open
   const handleNavOpen = () => {
     setIsNavOpen(!isNavOpen)
   }

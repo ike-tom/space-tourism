@@ -123,6 +123,9 @@
       .characterPicker {
         opacity: 0.17;
       }
+      .characterPickerActive {
+        opacity: 1;
+      }
 
       .characterPicker,
       .characterPickerActive {
@@ -140,10 +143,6 @@
           &:hover {
             opacity: 0.5;
           }
-        }
-
-        .characterPickerActive {
-          opacity: 1;
         }
       }
     }

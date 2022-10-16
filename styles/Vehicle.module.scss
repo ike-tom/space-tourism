@@ -1,0 +1,289 @@
+.crewMemberImageInfoContainer {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  top: 139px;
+  flex-direction: column;
+  text-align: center;
+  .crewMemberImageWrapper {
+    height: 170px;
+    position: relative;
+  }
+  .vehicleInfoWrapper {
+    order: 2;
+    .vehicleSubheader {
+      font-family: 'Barlow Condensed';
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      text-transform: uppercase;
+      margin: 0 0 9px 0;
+      letter-spacing: 2.3625px;
+      color: #d0d6f9;
+    }
+    .vehicleName {
+      font-family: 'Bellefair';
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 28px;
+      margin: 0 0 16px 0;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+    .vehicleDescription {
+      font-family: 'Barlow';
+      margin: 0 auto;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 25px;
+      width: 327px;
+      color: #d0d6f9;
+    }
+  }
+  .vehiclePickerWrapper {
+    margin: 32px 0 26px 0;
+    width: 152px;
+    height: 40px;
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    .vehiclePicker {
+      width: 40px;
+      height: 40px;
+      mix-blend-mode: normal;
+      border: 1px solid rgb(255, 255, 255, 0.25);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .vehicleId {
+        font-family: 'Bellefair';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18px;
+        text-align: center;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+// .crewMemberImageInfoContainer {
+//   position: absolute;
+//   width: 1275px;
+//   height: 527px;
+//   right: 0;
+//   top: 272px;
+//   flex-direction: row;
+//   align-items: center;
+//   display: flex;
+// }
+
+// .crewMemberImageWrapper {
+//   width: 515px;
+//   height: 527px;
+//   position: relative;
+//   order: 2;
+//   margin-left: auto;
+// }
+
+// .vehicleInfoWrapper {
+//   display: flex;
+//   flex-direction: column;
+//   width: 470px;
+//   height: 271px;
+//   height: 304px;
+// }
+
+// .vehicleSubheader {
+//   margin: 0 0 11px 0;
+//   height: 19px;
+//   font-family: 'Barlow Condensed';
+//   font-style: normal;
+//   font-weight: 400;
+//   font-size: 16px;
+//   line-height: 19px;
+//   letter-spacing: 2.7px;
+//   color: #d0d6f9;
+//   text-transform: uppercase;
+// }
+
+// .vehicleName {
+//   height: 64px;
+//   font-family: 'Bellefair';
+//   font-style: normal;
+//   font-weight: 400;
+//   font-size: 56px;
+//   line-height: 64px;
+//   color: #ffffff;
+//   text-transform: uppercase;
+//   margin: 0 0 17px 0;
+// }
+
+// .vehicleDescription {
+//   margin: 0;
+//   height: 160px;
+//   font-family: 'Barlow';
+//   font-style: normal;
+//   font-weight: 400;
+//   font-size: 18px;
+//   line-height: 32px;
+//   color: #d0d6f9;
+// }
+
+// .vehiclePickerWrapper {
+//   width: 80px;
+//   height: 304px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   margin-right: 80px;
+//   order: -1;
+// }
+
+// .vehiclePicker {
+//   box-sizing: border-box;
+//   width: 80px;
+//   height: 80px;
+//   border-radius: 50%;
+//   mix-blend-mode: normal;
+//   border: 1px solid rgb(255, 255, 255, 0.25);
+//   cursor: pointer;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   transition: 0.5s;
+// }
+
+// .vehicleId {
+//   font-family: 'Bellefair';
+//   font-style: normal;
+//   font-weight: 400;
+//   font-size: 32px;
+//   line-height: 37px;
+//   text-align: center;
+//   color: #ffffff;
+// }
+
+// .vehiclePicker:hover {
+//   border: 1px solid rgb(255, 255, 255, 1);
+// }
+
+// @media screen and (max-width: 1024px) {
+//   .crewMemberImageInfoContainer {
+//     position: absolute;
+//     width: 100vw;
+//     height: 707px;
+//     left: 0px;
+//     top: 220px;
+//     flex-direction: column;
+//   }
+//   .vehiclePickerWrapper {
+//     margin: 0 0 44px 0;
+//     flex-direction: row;
+//     height: auto;
+//     width: 210px;
+//   }
+//   .vehiclePicker {
+//     height: 60px;
+//     width: 60px;
+//   }
+//   .vehicleInfoWrapper {
+//     align-items: center;
+//     text-align: center;
+//   }
+//   .vehicleId {
+//     font-size: 24px;
+//     line-height: 28px;
+//   }
+//   .vehicleSubheader {
+//     font-size: 16px;
+//     line-height: 19px;
+//     letter-spacing: 2.7px;
+//     margin: 0 0 16px 0;
+//   }
+//   .vehicleName {
+//     font-family: 'Bellefair';
+//     font-style: normal;
+//     font-weight: 400;
+//     font-size: 40px;
+//     line-height: 46px;
+//     text-align: center;
+//     text-transform: uppercase;
+//   }
+//   .vehicleDescription {
+//     font-family: 'Barlow';
+//     font-style: normal;
+//     font-weight: 400;
+//     font-size: 16px;
+//     line-height: 28px;
+//     text-align: center;
+//     color: #d0d6f9;
+//   }
+//   .crewMemberImageWrapper {
+//     margin: 0 0 56px 0;
+//     order: -1;
+//     width: 100%;
+//   }
+//   .destinationSubheaderWrapper {
+//     position: absolute;
+//     width: auto;
+//     height: 24px;
+//     left: 38.5px;
+//     top: 136px;
+//   }
+//   .destinationSubheaderBold,
+//   .destinationSubheader {
+//     font-size: 20px;
+//     line-height: 24px;
+//     letter-spacing: 3.375px;
+//   }
+// }
+
+// @media screen and (max-width: 768px) {
+
+//   .crewMemberImageInfoContainer {
+//     position: absolute;
+//     width: 100%;
+//     height: 490px;
+//     left: 0px;
+//     top: 139px;
+//     justify-content: space-between;
+//   }
+//   .crewMemberImageWrapper {
+//     margin: 0 0 34px 0;
+//     height: 170px;
+//   }
+//   .vehiclePickerWrapper {
+//     margin: 0 0 26px 0;
+//     width: 152px;
+//   }
+//   .vehiclePicker {
+//     height: 40px;
+//     width: 40px;
+//   }
+//   .vehicleId {
+//     font-size: 16px;
+//     line-height: 18px;
+//   }
+//   .vehicleSubheader {
+//     font-size: 14px;
+//     line-height: 17px;
+
+//     letter-spacing: 2.3625px;
+//     margin: 0 0 9px 0;
+//   }
+//   .vehicleName {
+//     font-size: 24px;
+//     line-height: 28px;
+//     height: auto;
+//   }
+//   .vehicleDescription {
+//     font-size: 15px;
+//     line-height: 25px;
+//   }
+//   .vehicleInfoWrapper {
+//     width: 327px;
+//   }
+// }
