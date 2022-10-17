@@ -45,8 +45,22 @@ function DestinationPage(props: LoadedVehicleProps) {
           {vehicles.map((vehicle, index) => {
             return (
               <Link key={vehicle} href={`/technology/${vehicle}`}>
-                <div className={styles.vehiclePicker}>
-                  <a className={styles.vehicleId}>{index + 1}</a>
+                <div
+                  className={
+                    vehicleName === `${vehicle}`
+                      ? styles.vehiclePickerActive
+                      : styles.vehiclePicker
+                  }
+                >
+                  <a
+                    className={
+                      vehicleName === `${vehicle}`
+                        ? styles.vehicleIdActive
+                        : styles.vehicleId
+                    }
+                  >
+                    {index + 1}
+                  </a>
                 </div>
               </Link>
             )
