@@ -1,14 +1,28 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useState } from 'react'
-import styles from './Navbar.module.css'
+import styles from './Navbar.module.scss'
 
 function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false)
 
+  const router = useRouter()
+
+  const checkPath = (path: string) => {
+    return router.pathname.includes(path) || router.pathname === null
+  }
+
   const handleNavOpen = () => {
     setIsNavOpen(!isNavOpen)
   }
+
+  const MENU_LIST = [
+    { text: 'home', href: '/' },
+    { text: 'destination', href: '/destination/moon' },
+    { text: 'crew', href: '/crew/douglas_hurley' },
+    { text: 'technology', href: '/technology/launch_vehicle' },
+  ]
 
   return (
     <div className={styles.wrapper}>
@@ -25,41 +39,29 @@ function Navbar() {
         onClick={handleNavOpen}
         className={isNavOpen ? styles.hamburgerActive : styles.hamburger}
       >
-        <span className={styles.hamburger__box}>
-          <span className={styles.hamburger__inner}></span>
+        <span className={styles.hamburgerBox}>
+          <span className={styles.hamburgerInner}></span>
         </span>
       </button>
-
       <nav className={isNavOpen ? styles.navbarOpen : styles.navbar}>
-        <ul className={styles.navbarNav}>
-          <li className={styles.navItem}>
-            <Link href="/">
-              <a>
-                <b className={styles.navItemBold}>00</b> home
-              </a>
-            </Link>
-          </li>
-          <li className={styles.navItem}>
-            <Link href="/destination/moon">
-              <a>
-                <b className={styles.navItemBold}>01</b> destination
-              </a>
-            </Link>
-          </li>
-          <li className={styles.navItem}>
-            <Link href="/crew/douglas_hurley">
-              <a>
-                <b className={styles.navItemBold}>02</b> crew
-              </a>
-            </Link>
-          </li>
-          <li className={styles.navItem}>
-            <Link href="/technology/launch_vehicle">
-              <a>
-                <b className={styles.navItemBold}>03</b> technology
-              </a>
-            </Link>
-          </li>
+        <ul className={styles.navbarList}>
+          {MENU_LIST.map((item, index) => (
+            <li
+              key={index}
+              className={
+                checkPath(item.text)
+                  ? styles.navbarItemActive
+                  : styles.navbarItem
+              }
+            >
+              <Link href={item.href}>
+                <a className={styles.navbarLink}>
+                  <b className={styles.navItemBold}>{`0${index}`}</b>
+                  {item.text}
+                </a>
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </div>
