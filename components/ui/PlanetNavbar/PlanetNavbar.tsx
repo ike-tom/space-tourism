@@ -1,26 +1,32 @@
 import Link from 'next/link'
-import styles from './PlanetNavbar.module.css'
+import { useRouter } from 'next/router'
+import styles from './PlanetNavbar.module.scss'
 
 function PlanetNavbar() {
+  const router = useRouter()
+  const { planetName } = router.query
+
+  const planets = ['moon', 'mars', 'europa', 'titan']
+
   return (
-    <div className={styles.wrapper}>
-      <nav className={styles.navbar}>
-        <ul className={styles.navbarList}>
-          <li className={styles.navbarItem}>
-            <Link href="/destination/moon">moon</Link>
+    <nav className={styles.navbar}>
+      <ul className={styles.navbarList}>
+        {planets.map((planet) => (
+          <li
+            key={planet}
+            className={
+              planetName === `${planet}`
+                ? styles.navbarItemActive
+                : styles.navbarItem
+            }
+          >
+            <Link href={`/destination/${planet}`}>
+              <a className={styles.navbarLink}>{planet}</a>
+            </Link>
           </li>
-          <li className={styles.navbarItem}>
-            <Link href="/destination/mars">mars</Link>
-          </li>
-          <li className={styles.navbarItem}>
-            <Link href="/destination/europa">europa</Link>
-          </li>
-          <li className={styles.navbarItem}>
-            <Link href="/destination/titan">titan</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+        ))}
+      </ul>
+    </nav>
   )
 }
 

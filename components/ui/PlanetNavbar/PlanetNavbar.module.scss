@@ -1,0 +1,41 @@
+.navbar {
+  width: 237.5px;
+  height: 28px;
+  margin: 0 auto;
+  @media screen and (min-width: 768px) {
+    width: 285.5px;
+    height: 34px;
+  }
+  @media screen and (min-width: 1024px) {
+    margin: 0;
+  }
+  .navbarList {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    justify-content: space-between;
+    margin: 0;
+    .navbarItem,
+    .navbarItemActive {
+      font-family: 'Barlow Condensed';
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 2.3625px;
+      text-transform: uppercase;
+      color: #d0d6f9;
+      @media screen and (min-width: 768px) {
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: 2.7px;
+      }
+    }
+    .navbarItemActive {
+      color: #ffffff;
+      border-bottom: 3px solid #ffffff;
+      margin-bottom: -8px;
+      @media screen and (min-width: 768px) {
+        margin-bottom: -12px;
+      }
+    }
+  }
+}
