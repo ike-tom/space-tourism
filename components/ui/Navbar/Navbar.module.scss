@@ -135,13 +135,7 @@
       @media screen and (min-width: 1024px) {
         width: 542px;
       }
-      .navbarItemActive {
-        @media screen and (min-width: 1024px) {
-          border-bottom: 3px solid #fff;
-          outline-offset: 15px;
-          margin-bottom: -35px;
-        }
-      }
+
       .navbarItem {
         @media screen and (min-width: 1024px) {
           &:hover {
@@ -180,6 +174,15 @@
               display: inline;
             }
           }
+        }
+      }
+      .navbarItemActive {
+        @extend .navbarItem;
+
+        @media screen and (min-width: 768px) {
+          border-bottom: 3px solid #fff;
+          outline-offset: 15px;
+          margin-bottom: -35px;
         }
       }
     }
