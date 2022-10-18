@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import styles from './Background.module.css'
+import styles from './Background.module.scss'
 
 const Background = (props: { alt: string; url: string }) => (
   <div className={styles.bgWrap}>
