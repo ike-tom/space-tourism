@@ -4,70 +4,80 @@ import styles from '../../styles/Vehicle.module.scss'
 import Link from 'next/link'
 import Layout from '../../components/ui/Layout/Layout'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 function DestinationPage(props: LoadedVehicleProps) {
   const { loadedVehicle } = props
 
   const router = useRouter()
   const { vehicleName } = router.query
-  const vehicles = ['launch_vehicle', 'spaceport', 'space_capsule']
+  const VEHICLES_LIST = ['launch_vehicle', 'spaceport', 'space_capsule']
 
   if (!loadedVehicle) {
     return <p>Loading...</p>
   }
 
   return (
-    <Layout
-      alt="space"
-      url="/technology/background-technology-desktop.jpg"
-      chapterNumber="03"
-      chapterTitle="space launch 101"
-    >
-      <div className={styles.crewMemberImageInfoContainer}>
-        <div className={styles.crewMemberImageWrapper}>
-          <Image
-            src={loadedVehicle.images.portrait}
-            alt={loadedVehicle.name}
-            layout="fill"
-            priority
-            objectFit="cover"
-            objectPosition="bottom"
-          />
-        </div>
-        <div className={styles.vehicleInfoWrapper}>
-          <p className={styles.vehicleSubheader}>the terminology…</p>
-          <h1 className={styles.vehicleName}>{loadedVehicle.name}</h1>
-          <p className={styles.vehicleDescription}>
-            {loadedVehicle.description}
-          </p>
-        </div>
-        <div className={styles.vehiclePickerWrapper}>
-          {vehicles.map((vehicle, index) => {
-            return (
-              <Link key={vehicle} href={`/technology/${vehicle}`}>
-                <div
-                  className={
-                    vehicleName === `${vehicle}`
-                      ? styles.vehiclePickerActive
-                      : styles.vehiclePicker
-                  }
-                >
-                  <a
+    <>
+      <Head>
+        <title>Space Travel Vehicles</title>
+        <meta
+          name="description"
+          content="We are professionalists. Let's face it. The safest vehicles in the universe"
+        />
+      </Head>
+      <Layout
+        alt="space"
+        url="/technology/background-technology.webp"
+        chapterNumber="03"
+        chapterTitle="space launch 101"
+      >
+        <div className={styles.crewMemberImageInfoContainer}>
+          <div className={styles.crewMemberImageWrapper}>
+            <Image
+              src={loadedVehicle.images.portrait}
+              alt={loadedVehicle.name}
+              layout="fill"
+              priority
+              objectFit="cover"
+              objectPosition="bottom"
+            />
+          </div>
+          <div className={styles.vehicleInfoWrapper}>
+            <p className={styles.vehicleSubheader}>the terminology…</p>
+            <h1 className={styles.vehicleName}>{loadedVehicle.name}</h1>
+            <p className={styles.vehicleDescription}>
+              {loadedVehicle.description}
+            </p>
+          </div>
+          <div className={styles.vehiclePickerWrapper}>
+            {VEHICLES_LIST.map((vehicle, index) => {
+              return (
+                <Link key={vehicle} href={`/technology/${vehicle}`}>
+                  <div
                     className={
                       vehicleName === `${vehicle}`
-                        ? styles.vehicleIdActive
-                        : styles.vehicleId
+                        ? styles.vehiclePickerActive
+                        : styles.vehiclePicker
                     }
                   >
-                    {index + 1}
-                  </a>
-                </div>
-              </Link>
-            )
-          })}
+                    <a
+                      className={
+                        vehicleName === `${vehicle}`
+                          ? styles.vehicleIdActive
+                          : styles.vehicleId
+                      }
+                    >
+                      {index + 1}
+                    </a>
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </>
   )
 }
 

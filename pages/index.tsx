@@ -3,11 +3,19 @@ import styles from '../styles/Home.module.scss'
 import Navbar from '../components/ui/Navbar/Navbar'
 import Background from '../components/ui/Background/Background'
 import Link from 'next/link'
+import Head from 'next/head'
 
 const Home: NextPage = () => {
   return (
     <>
-      <Background alt="earth" url="/home/background-home-desktop.jpg" />
+      <Head>
+        <title>Home-Space Travel</title>
+        <meta
+          name="description"
+          content="Last chance to travel to the space! Don't miss it out with our travel agency"
+        />
+      </Head>
+      <Background alt="earth" url="/home/background-home.webp" />
       <main className={styles.main}>
         <Navbar />
         <div className={styles.textButtonContainer}>

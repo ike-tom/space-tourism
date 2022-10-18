@@ -4,13 +4,14 @@ import styles from '../../styles/Crew.module.scss'
 import Link from 'next/link'
 import Layout from '../../components/ui/Layout/Layout'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 function DestinationPage(props: LoadedCrewMemberProps) {
   const { loadedCrewMember } = props
 
   const router = useRouter()
   const { crewMemberName } = router.query
-  const astronauts = [
+  const ASTRONAUTS_LIST = [
     'douglas_hurley',
     'mark_shuttleworth',
     'victor_glover',
@@ -22,45 +23,54 @@ function DestinationPage(props: LoadedCrewMemberProps) {
   }
 
   return (
-    <Layout
-      alt="space"
-      url="/crew/background-crew-desktop.jpg"
-      chapterNumber="02"
-      chapterTitle="Meet your crew"
-    >
-      <div className={styles.crewMemberImageInfoContainer}>
-        <div className={styles.crewMemberImageWrapper}>
-          <Image
-            src={loadedCrewMember.images.webp}
-            alt={loadedCrewMember.name}
-            layout="fill"
-            objectFit="contain"
-            priority
-            className={styles.crewMemberImage}
-          />
-        </div>
-        <div className={styles.memberInfoContainer}>
-          <h2 className={styles.crewMemberRole}>{loadedCrewMember.role}</h2>
-          <h1 className={styles.crewMemberName}>{loadedCrewMember.name}</h1>
-          <p className={styles.crewMemberBio}>{loadedCrewMember.bio}</p>
-          <div className={styles.characterPickerWrapper}>
-            {astronauts.map((astronaut) => {
-              return (
-                <Link key={astronaut} href={`/crew/${astronaut}`}>
-                  <div
-                    className={
-                      crewMemberName === `${astronaut}`
-                        ? styles.characterPickerActive
-                        : styles.characterPicker
-                    }
-                  ></div>
-                </Link>
-              )
-            })}
+    <>
+      <Head>
+        <title>Space Travel Crew</title>
+        <meta
+          name="description"
+          content="Check out our space crew. They are the best in the business"
+        />
+      </Head>
+      <Layout
+        alt="space"
+        url="/crew/background-crew.webp"
+        chapterNumber="02"
+        chapterTitle="Meet your crew"
+      >
+        <div className={styles.crewMemberImageInfoContainer}>
+          <div className={styles.crewMemberImageWrapper}>
+            <Image
+              src={loadedCrewMember.images.webp}
+              alt={loadedCrewMember.name}
+              layout="fill"
+              objectFit="contain"
+              priority
+              className={styles.crewMemberImage}
+            />
+          </div>
+          <div className={styles.memberInfoContainer}>
+            <h2 className={styles.crewMemberRole}>{loadedCrewMember.role}</h2>
+            <h1 className={styles.crewMemberName}>{loadedCrewMember.name}</h1>
+            <p className={styles.crewMemberBio}>{loadedCrewMember.bio}</p>
+            <div className={styles.characterPickerWrapper}>
+              {ASTRONAUTS_LIST.map((astronaut) => {
+                return (
+                  <Link key={astronaut} href={`/crew/${astronaut}`}>
+                    <div
+                      className={
+                        crewMemberName === `${astronaut}`
+                          ? styles.characterPickerActive
+                          : styles.characterPicker
+                      }
+                    ></div>
+                  </Link>
+                )
+              })}
+            </div>
           </div>
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </>
   )
 }
 

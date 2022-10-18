@@ -6,12 +6,12 @@ function PlanetNavbar() {
   const router = useRouter()
   const { planetName } = router.query
 
-  const planets = ['moon', 'mars', 'europa', 'titan']
+  const PLANETS_LIST = ['moon', 'mars', 'europa', 'titan']
 
   return (
     <nav className={styles.navbar}>
       <ul className={styles.navbarList}>
-        {planets.map((planet) => (
+        {PLANETS_LIST.map((planet) => (
           <li
             key={planet}
             className={
